@@ -78,7 +78,7 @@ export default {
 .notify {
   height: 36px;
   width: 36px;
-  margin-right: 30px;
+  margin-right: 20px;
   background: #0f1e4c;
   border-radius: 50%;
   display: flex;

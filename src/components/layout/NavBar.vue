@@ -6,7 +6,10 @@
       <breadcrumb />
       <!-- 暂时放这里 -->
       <div class="right-info">
-        <notify v-auth="'消息推送'" v-show="false" />
+        <div class="header-search">
+          <lin-search @query="onQueryChange" ref="searchKeyword" />
+        </div>
+        <notify v-auth="'消息推送'" v-show="true" />
         <clear-tab></clear-tab>
         <screenfull />
         <user></user>
@@ -21,6 +24,7 @@ import Breadcrumb from './Breadcrumb'
 import Screenfull from './Screenfull'
 import User from './User'
 import ClearTab from './ClearTab'
+import LinSearch from '@/components/base/search/lin-search'
 
 export default {
   name: 'NavBar',
@@ -31,11 +35,15 @@ export default {
     Notify,
     Screenfull,
     ClearTab,
+    LinSearch,
   },
 }
 </script>
 
 <style lang="scss" scoped>
+.header-search {
+  margin-right: 20px
+}
 .app-nav-bar {
   width: 100%;
   height: $navbar-height;
