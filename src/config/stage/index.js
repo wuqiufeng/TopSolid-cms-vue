@@ -1,7 +1,16 @@
+import worksheetConfig from './worksheet'
+import pdmConfig from './pdm'
+import mrpConfig from './mrp'
+import saveConfig from './save'
+import scheduleConfig from './schedule'
+import cncConfig from './cnc'
+import kanbanConfig from './kanban'
+import basicConfig from './basic'
 import adminConfig from './admin'
 import bookConfig from './book' // 引入图书管理路由文件
 import pluginsConfig from './plugins'
 import Utils from '@/lin/utils/util'
+
 
 // eslint-disable-next-line import/no-mutable-exports
 let homeRouter = [
@@ -16,6 +25,24 @@ let homeRouter = [
     order: 0,
   },
   {
+    title: '无纸车间',
+    type: 'view',
+    name: Symbol('workshop'),
+    route: '/workshop',
+    filePath: 'views/workshop/Workshop.vue',
+    inNav: true,
+    icon: 'iconfont icon-iconset0103',
+    order: 1,
+  },
+  worksheetConfig,
+  pdmConfig,
+  mrpConfig,
+  saveConfig,
+  scheduleConfig,
+  cncConfig,
+  kanbanConfig,
+  basicConfig,
+  {
     title: '日志管理',
     type: 'view',
     name: Symbol('log'),
@@ -23,7 +50,7 @@ let homeRouter = [
     filePath: 'views/log/Log.vue',
     inNav: true,
     icon: 'iconfont icon-rizhiguanli',
-    order: 1,
+    order: 99,
     right: ['查询所有日志'],
   },
   {
@@ -35,8 +62,8 @@ let homeRouter = [
     inNav: false,
     icon: 'iconfont icon-rizhiguanli',
   },
-  bookConfig,
   adminConfig,
+  bookConfig,
 ]
 
 const plugins = [...pluginsConfig]
