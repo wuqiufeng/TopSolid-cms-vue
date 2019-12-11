@@ -14,15 +14,15 @@ const worksheetRouter = {
         title: '工单数据',
         type: 'folder', // 取 route 为默认加载页
         icon: 'iconfont icon-huiyuanguanli',
-        filePath: 'views/admin/user/',
+        filePath: 'views/error-page/',
         inNav: true,
         children: [
           {
             title: '加工单数据',
             type: 'view',
             name: 'userList',
-            route: '/admin/user/list',
-            filePath: 'views/admin/user/UserList.vue',
+            route: '/worksheet/list',
+            filePath: 'views/error-page/404.vue',
             inNav: true,
             icon: 'iconfont icon-huiyuanguanli',
           }
@@ -38,19 +38,19 @@ const worksheetRouter = {
         inNav: true,
         children: [
           {
-            route: '/admin/group/list',
+            route: '/worksheet',
             type: 'view',
             name: 'groupList',
             inNav: true,
-            filePath: 'views/admin/group/GroupList.vue',
+            filePath: 'views/error-page/404.vue',
             title: '立项管理',
             icon: 'iconfont icon-huiyuanguanli',
           },
           {
-            route: '/admin/group/add',
+            route: '/worksheet',
             type: 'view',
             name: 'groupAdd',
-            filePath: 'views/admin/group/GroupAdd.vue',
+            filePath: 'views/error-page/404.vue',
             inNav: true,
             title: '立项跟踪',
             icon: 'iconfont icon-add',

@@ -1,5 +1,5 @@
 <template>
-  <div>无纸车间</div>
+  <div>无纸车间列表</div>
 </template>
 
 <script type="text/ecmascript-6">

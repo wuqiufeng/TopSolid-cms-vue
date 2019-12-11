@@ -1,3 +1,4 @@
+import workshopConfig from './workshop'
 import worksheetConfig from './worksheet'
 import pdmConfig from './pdm'
 import mrpConfig from './mrp'
@@ -24,16 +25,9 @@ let homeRouter = [
     icon: 'iconfont icon-iconset0103',
     order: 0,
   },
-  {
-    title: '无纸车间',
-    type: 'view',
-    name: Symbol('workshop'),
-    route: '/workshop',
-    filePath: 'views/workshop/Workshop.vue',
-    inNav: true,
-    icon: 'iconfont icon-iconset0103',
-    order: 1,
-  },
+  adminConfig,
+  bookConfig,
+  workshopConfig,
   worksheetConfig,
   pdmConfig,
   mrpConfig,
@@ -62,8 +56,6 @@ let homeRouter = [
     inNav: false,
     icon: 'iconfont icon-rizhiguanli',
   },
-  adminConfig,
-  bookConfig,
 ]
 
 const plugins = [...pluginsConfig]

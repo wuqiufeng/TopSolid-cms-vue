@@ -7,9 +7,9 @@
       <!-- 暂时放这里 -->
       <div class="right-info">
         <div class="header-search">
-          <lin-search @query="onQueryChange" ref="searchKeyword" />
+          <lin-search @query="onQueryChange" placeholder="请输入工作单号" ref="searchKeyword" />
         </div>
-        <notify v-auth="'消息推送'" v-show="true" />
+        <notify v-auth="'消息推送'" v-show="false" />
         <clear-tab></clear-tab>
         <screenfull />
         <user></user>
