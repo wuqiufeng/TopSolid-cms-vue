@@ -15,22 +15,42 @@
             label-width="100px"
             @submit.native.prevent>
             <el-form-item label="工作单号" prop="title">
-              <el-input size="medium" v-model="form.title" placeholder="请填写书名"></el-input>
+              <el-input size="medium" v-model="form.title" placeholder="请填工作单号"></el-input>
             </el-form-item>
-            <el-form-item label="作者" prop="author">
-              <el-input size="medium" v-model="form.author" placeholder="请填写作者"></el-input>
-            </el-form-item>
-            <el-form-item label="封面" prop="image">
-              <el-input size="medium" v-model="form.image" placeholder="请填写封面地址"></el-input>
-            </el-form-item>
-            <el-form-item label="简介" prop="summary">
-              <el-input
-                size="medium"
-                type="textarea"
-                :autosize="{ minRows: 4, maxRows: 8}"
-                placeholder="请输入简介"
-                v-model="form.summary">
-              </el-input>
+            <el-form-item label="文件上传" prop="author">
+              <el-table
+                :data="tableData"
+                border
+                :header-row-style="{height:'15px'}"
+                :header-cell-style="{padding:'0px'}"
+                :row-style="{height:'20px'}"
+                :cell-style="{padding:'0px'}"
+                >
+                <el-table-column
+                  prop="date"
+                  label=""
+                  width="180"
+                  height="4">
+                </el-table-column>
+                <el-table-column
+                  prop="name"
+                  label="数据类型"
+                  width="180">
+                </el-table-column>
+                <el-table-column
+                  prop="address"
+                  label="请选择上传数据（PDF文件）">
+                  <el-upload
+                    class="upload-demo"
+                    action="https://jsonplaceholder.typicode.com/posts/"
+
+                    :auto-upload=false
+                    accept='.pdf'
+                    >
+                    <el-button size="small" type="primary">点击上传</el-button>
+                  </el-upload>
+                </el-table-column>
+              </el-table>
             </el-form-item>
 
             <el-form-item class="submit">
@@ -57,6 +77,79 @@ export default {
         summary: '',
         image: '',
       },
+      tableData: [{
+        date: '1',
+        name: 'CNC程序部件图',
+        address: '',
+      }, {
+        date: '2',
+        name: '五金加工图',
+        address: '',
+      }, {
+        date: '3',
+        name: '出货编排',
+        address: '',
+      }, {
+        date: '4',
+        name: '包装数据',
+        address: '',
+      }, {
+        date: '5',
+        name: '生产工艺流程',
+        address: '',
+      }, {
+        date: '6',
+        name: '安装说明',
+        address: '',
+      }, {
+        date: '7',
+        name: '物料明细表',
+        address: '',
+      }, {
+        date: '8',
+        name: '玻璃图',
+        address: '',
+      }, {
+        date: '9',
+        name: '结构施工图',
+        address: '',
+      }, {
+        date: '10',
+        name: '历次生产档',
+        address: '',
+      }, {
+        date: '11',
+        name: 'Qc报告',
+        address: '',
+      }, {
+        date: '12',
+        name: '面单',
+        address: '',
+      }, {
+        date: '13',
+        name: '五金材料表',
+        address: '',
+      }, {
+        date: '14',
+        name: '亚加力料表',
+        address: '',
+      }, {
+        date: '15',
+        name: '布皮科表',
+        address: '',
+      }, {
+        date: '16',
+        name: '实木料表',
+        address: '',
+      }, {
+        date: '17',
+        name: '石头科表',
+        address: '',
+      }, {
+        date: '18',
+        name: '油物料表',
+        address: '',
+      }],
     }
   },
   methods: {
@@ -92,11 +185,23 @@ export default {
   }
 
   .wrap {
-    padding: 20px;
+    padding: 10px;
+
+    .el-row{
+      .el-col{
+        .el-form{
+          .el-form-item{
+            margin-bottom: 0px !important;
+          }
+        }
+      }
+    }
   }
 
   .submit {
     float: left;
   }
 }
+
+
 </style>
